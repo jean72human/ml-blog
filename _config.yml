@@ -6,8 +6,8 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 
-title: fastpages
-description: An easy to use blogging platform with support for Jupyter Notebooks.
+title: Gbetondji Dovonon
+description: I am an undergrad with a passion for machine learning.
 github_username: jean72human
 # you can comment the below line out if your repo name is not different than your baseurl
 github_repo: "ml-blog"
@@ -41,7 +41,6 @@ minima:
   social_links:
     twitter: fastdotai
     github: fastai
-  skin: sunrise
 
 # Set this to true to get LaTeX math equation support
 use_math: 
