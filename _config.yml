@@ -34,14 +34,14 @@ url: "https://jean72human.github.io" # the base hostname & protocol for your sit
 #
 # 3. You must replace the parameter `baseurl` in _action_files/settings.ini with the same value as you set here but WITHOUT QUOTES.
 #
-baseurl: "ml-blog" # the subpath of your site, e.g. "/blog".
+baseurl: "/ml-blog" # the subpath of your site, e.g. "/blog".
 
 # Github and twitter are optional:
 minima:
   social_links:
     twitter: jean72human
     github: jean72human
-  skin: fastpages-dracula-higlight
+#  skin: fastpages-dracula-higlight
 
 # Set this to true to get LaTeX math equation support
 use_math: 
