@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Multi-source transfer learning and we scraping | Gbetondji Dovonon</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Multi-source transfer learning and we scraping" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Employing multi-source transfer learning and web scraping to increase model accuracy when the dataset is limited." />
+<meta property="og:description" content="Employing multi-source transfer learning and web scraping to increase model accuracy when the dataset is limited." />
+<link rel="canonical" href="https://jean72human.github.io/ml-blog/research/2020/03/20/multi-source-transfer-learning-and-web-scraping.html" />
+<meta property="og:url" content="https://jean72human.github.io/ml-blog/research/2020/03/20/multi-source-transfer-learning-and-web-scraping.html" />
+<meta property="og:site_name" content="Gbetondji Dovonon" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-20T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"Employing multi-source transfer learning and web scraping to increase model accuracy when the dataset is limited.","@type":"BlogPosting","headline":"Multi-source transfer learning and we scraping","dateModified":"2020-03-20T00:00:00-05:00","datePublished":"2020-03-20T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jean72human.github.io/ml-blog/research/2020/03/20/multi-source-transfer-learning-and-web-scraping.html"},"url":"https://jean72human.github.io/ml-blog/research/2020/03/20/multi-source-transfer-learning-and-web-scraping.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://jean72human.github.io/ml-blog/feed.xml" title="Gbetondji Dovonon" /><link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Multi-source transfer learning and we scraping | Gbetondji Dovonon</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Multi-source transfer learning and we scraping" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Employing multi-source transfer learning and web scraping to increase model accuracy when the dataset is limited." />
+<meta property="og:description" content="Employing multi-source transfer learning and web scraping to increase model accuracy when the dataset is limited." />
+<link rel="canonical" href="https://jean72human.github.io/ml-blog/research/2020/03/20/multi-source-transfer-learning-and-web-scraping.html" />
+<meta property="og:url" content="https://jean72human.github.io/ml-blog/research/2020/03/20/multi-source-transfer-learning-and-web-scraping.html" />
+<meta property="og:site_name" content="Gbetondji Dovonon" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-20T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"Employing multi-source transfer learning and web scraping to increase model accuracy when the dataset is limited.","@type":"BlogPosting","headline":"Multi-source transfer learning and we scraping","dateModified":"2020-03-20T00:00:00-05:00","datePublished":"2020-03-20T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jean72human.github.io/ml-blog/research/2020/03/20/multi-source-transfer-learning-and-web-scraping.html"},"url":"https://jean72human.github.io/ml-blog/research/2020/03/20/multi-source-transfer-learning-and-web-scraping.html","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://jean72human.github.io/ml-blog/feed.xml" title="Gbetondji Dovonon" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/ml-blog/">Gbetondji Dovonon</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/ml-blog/about/">About Me</a><a class="page-link" href="/ml-blog/search/">Search</a><a class="page-link" href="/ml-blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Multi-source transfer learning and we scraping</h1><p class="page-description">Employing multi-source transfer learning and web scraping to increase model accuracy when the dataset is limited.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-03-20T00:00:00-05:00" itemprop="datePublished">
+        Mar 20, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      8 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/ml-blog/categories/#research">research</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#multi-source-transfer-learning-and-we-scraping">Multi-source transfer learning and we scraping</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#abstract">Abstract</a></li>
+<li class="toc-entry toc-h2"><a href="#introduction">Introduction</a></li>
+<li class="toc-entry toc-h2"><a href="#materials-and-methods">Materials and methods</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#materials">Materials</a></li>
+<li class="toc-entry toc-h3"><a href="#multi-source-transfer-learning">Multi-source transfer learning</a></li>
+<li class="toc-entry toc-h3"><a href="#web-scraping">Web scraping</a></li>
+<li class="toc-entry toc-h3"><a href="#implementation-details">Implementation details</a></li>
+<li class="toc-entry toc-h3"><a href="#results">Results</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#discussion">Discussion</a></li>
+<li class="toc-entry toc-h2"><a href="#conclusion">Conclusion</a></li>
+<li class="toc-entry toc-h2"><a href="#references">References</a></li>
+</ul>
+</li>
+</ul><h1 id="multi-source-transfer-learning-and-we-scraping">
+<a class="anchor" href="#multi-source-transfer-learning-and-we-scraping" aria-hidden="true"><span class="octicon octicon-link"></span></a>Multi-source transfer learning and we scraping</h1>
+
+<h2 id="abstract">
+<a class="anchor" href="#abstract" aria-hidden="true"><span class="octicon octicon-link"></span></a>Abstract</h2>
+
+<p>*
+Machine learning and, more specifically, deep learning have recently driven many innovations. The availability of massive datasets and computation resources has made it possible to create deeper neural networks that are able to learn more meaningful representations of the data. Those new possibilities are not always accessible to the average African company trying to leverage on deep learning to increase profit. In that case, scarcity of data, especially, could be a limitation since neural networks are known to be data-hungry. When faced with the issue of unavailability of public data, a company can either increase the size of the dataset by collecting data themselves or increase the size and complexity of the model. The option studied here is to use web scraping to manage and clean a bigger dataset. In trying to increase the size and complexity of the model, to avoid overfitting, the transfer learning approach was used. This technique involves the transfer of weights from several datasets using model ensembling. All these methods were tested on a rice meal classification problem. The problem consists of classifying images of four rice-based dishes: jollof rice, fried rice, plain rice, and waakye. The dataset contains 60 train images and 20 test images for each group making up a total of 240 training images and 80 testing images. The baseline of 75% was achieved using a dense net Convolutional Neural Network (CNN). The web scraping method used to increase the dataset size attained an accuracy of 87%. A multi-source transfer learning approach was also used where models were pre-trained on the Food-101 dataset and the Food-256 dataset. The multisource transfer learning method achieved an accuracy of 90%. Using these two methods, we implement two ways to significantly increase the efficiency of a model when the original dataset is small. 
+*</p>
+
+<h2 id="introduction">
+<a class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h2>
+
+<p>The size of training data plays a vital role in Machine Learning (ML), in learning useful representations that accurately predict the task at hand. Generally, it is common knowledge that a small dataset will result in a sparse approximation of the underlying regularity, resulting in a model with abysmal performance. Techniques have been proposed in ML literature to facilitate selecting the best model in the face of a small training dataset. Methods include employing a short model with fewer parameters, cross-validation <sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>, transfer learning <sup id="fnref:3"><a href="#fn:3" class="footnote">2</a></sup>, among others. However, too little data size does not often yield much improvement with these approaches. Most importantly, in the African context where data is often highly unstructured and available in minimal quantities, building models with high accuracy calls for a different approach.  <br>
+This paper, demonstrates how to achieve models with high predictive accuracy, when faced with data that is highly unstructured or unavailable, using Multi-Source Transfer learning (Model Ensembling) or Web Scraping to assemble a structured dataset set for most ML tasks. Multi-Source Transfer is a common practice employed by participants in ML competitions to build winning models, while Web Scraping can be applied to create datasets in a context where no data infrastructure exists to facilitate dataset creation.</p>
+
+<h2 id="materials-and-methods">
+<a class="anchor" href="#materials-and-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Materials and methods</h2>
+
+<h3 id="materials">
+<a class="anchor" href="#materials" aria-hidden="true"><span class="octicon octicon-link"></span></a>Materials</h3>
+
+<p>The following are some of the technologies we used in the project.  <br>
+PyTorch: Pytorch, is a deep learning package, which is known for its high-level tensor computations and building neural networks with less effort. Pytorch is Pythonic, and more importantly, highly optimized for computationally expensive operations, such as convolutional neural networks, recurrence neural networks, and complex tensor operations. Pytorch has many pre-trained models that enhance speedy model training with appreciable high accuracy. This package is still a young player compared to its competitors like TensorFlow. However, it gains momentum very fast due to its features above.  <br>
+Floyd Hub: Training deep learning models is computationally expensive; it requires machines with high processing power. The cheapest way to train the models is to purchase cloud computing services if buying a GPU for your local device is expensive. Floydhub is a cloud computing option employed to train the model under study, because they already preinstalled TensorFlow, PyTorch, Keras, and many more dependencies. Quite apart from having an extensive collection of pre-installed dependencies, Floydhub is simple to use.  <br>
+Google-images-download: This technology is a python package utility for conveniently scraping images from google. However, other powerful web scraping tools exist.</p>
+
+<h3 id="multi-source-transfer-learning">
+<a class="anchor" href="#multi-source-transfer-learning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Multi-source transfer learning</h3>
+
+<p>Transfer learning consists of transferring knowledge from a more extensive database (source) to a smaller database (target) using weights learned from the bigger database as a starting point when training a model for the second database. The domain of the source and how closely it is related to the domain of the target is also relevant since it can increase the efficiency of the transfer.  In this experiment, weights are transfered from several sources, which is known as multi-source transfer learning. One limitation of multi-source transfer learning is that multiple sets of weights cannot be used as a starting point. Hence the use of a model ensembling method to transfer knowledge from all the datasets <sup id="fnref:2"><a href="#fn:2" class="footnote">3</a></sup>.  <br>
+Multi-Source Transfer or Model Ensembling consists of pooling together the predictions of a set of different models to produce better forecasts – where the final model is trained for each of the sources. To fuse the knowledge from these various models, we used an ensemble that concatenates features extracted using the models trained on the sources, and passed the concatenated features to a multilayer perceptron (MLP). The ensemble was then fine-tuned on the target. The models were pre-trained on four datasets: the original dataset, ImageNet, Food101 <sup id="fnref:4"><a href="#fn:4" class="footnote">4</a></sup>, and Food-256 [^5].</p>
+
+<p><img src="/ml-blog/images/transferlearningone/diagramone.jpg" alt="" title="Figure 1: Diagram of the model ensemble used for multi-source transfer learning"></p>
+
+<h3 id="web-scraping">
+<a class="anchor" href="#web-scraping" aria-hidden="true"><span class="octicon octicon-link"></span></a>Web scraping</h3>
+
+<p>Web Scraping or web data extraction is used for extracting human-readable data from websites. It is a handy technique used in scenarios where data for a specific ML task is complicated to come by. There are not a lot of data infrastructure that exists in most organizations in the African context.  Furthermore, due to bureaucracy and the lack of trust of organizations exposing their data, this technique is powerful for collecting data for various ML tasks in the Africa context. 
+Using this method, two thousand training images of local rice dishes were scrapped in less than thirty (30) minutes. Since a lot of junk images are often downloaded during web scraping, some manual work was done to remove unwanted files and clean up the data into a suitable format.</p>
+
+<h3 id="implementation-details">
+<a class="anchor" href="#implementation-details" aria-hidden="true"><span class="octicon octicon-link"></span></a>Implementation details</h3>
+
+<p>The methods tested were implemented using PyTorch and run on a virtual machine with a Tesla V100 GPU (16 GB ram) and 8 CPUs. All models were trained with a learning rate of 1e-3. The pre-trained models for Food-101 and Food-256 were trained for five epochs. The models (baselines and ensemble) were trained for 30 epochs.</p>
+
+<h3 id="results">
+<a class="anchor" href="#results" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results</h3>
+
+<p>As a baseline method, a randomly initialized densenet-121 model on the initial dataset was trained. Using this method, an accuracy of 87% was achieved. Table 1 provides a summary of the results obtained.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Accuracy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Baseline (randomly initialized densenet-121)</td>
+      <td>75%</td>
+    </tr>
+    <tr>
+      <td>Increased dataset</td>
+      <td>87%</td>
+    </tr>
+    <tr>
+      <td>Multi-source transfer learning</td>
+      <td>90%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The pre-trained ensemble model achieved the highest accuracy and had a consistently high accuracy across epochs.</p>
+
+<p><img src="/ml-blog/images/transferlearningone/graphone.jpg" alt="" title="Figure 2: Accuracies for models N0 to N4"></p>
+
+<h2 id="discussion">
+<a class="anchor" href="#discussion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Discussion</h2>
+
+<p>After increasing the size of the dataset, with the same method, there was a substantial increase in the level of accuracy. This improvement shows the importance of large data sets, and the limitations of deep learning techniques when dealing with small data. Therefore, for deep learning to be used to its full potential in Africa, it is important that quality local datasets are made public, in order to foster research and make it easier for companies to profit from the deep learning advancement. It also showcases how useful web scraping can be as a data science tool for dataset creation. <br>
+Multi-source transfer learning resulted in a model that was able to reach high accuracies quite fast. The proposed ensemble also seems not to overfit and shows a stable increase in accuracy. Sharing pre-trained models can greatly help when faced with limited data, especially with pretrained models on various datasets. Our approach could have been made easier to implement if all the pre-trained models were already available. Also, so far this approach would not be suited for all types of inferences because of the big size of the models and their high latency. This can, however, be solved using model distillation and model compression.</p>
+
+<h2 id="conclusion">
+<a class="anchor" href="#conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion</h2>
+
+<p>In summary, this study showed has how easy it is to obtain a significant improvement in accuracy (up to 15%) over the baseline results, using Multi-Source Transfer Learning. The study also showed how to achieve a significant improvement in accuracy (up to 12%) over the baseline results by employing Web Scraping technique to acquire more dataset for a specific task. There is still a great avenue to improve upon these accuracies. We estimate that we can achieve a very high overall accuracy when these two techniques are combined. In our future work, we hope to test this hypothesis by combining these two techniques.</p>
+
+<h2 id="references">
+<a class="anchor" href="#references" aria-hidden="true"><span class="octicon octicon-link"></span></a>References</h2>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>R. Kohavi, “A Study of Cross-Validation and Bootstrap for Accuracy Estimation and Model Selection”, Research gate, 2001. Available: https://www.researchgate.net/profile/Ron_Kohavi/publication/2352264_A_Study_of_CrossValidation_and_Bootstrap_for_Accuracy_Estimation_and_Model_Selection/links/02e7e51bc c14c5e91c000000.pdf. [Accessed 12 June 2019]. <a href="#fnref:1" class="reversefootnote">↩</a></p>
+    </li>
+    <li id="fn:3">
+      <p>Ng.  Hong-Wei &amp; Nguyen, D. Vonikakis, V. Winkler, Stefan. “ Deep Learning for Emotion Recognition on Small Datasets Using Transfer Learning”. Available: 10.1145/2818346.2830593. <a href="#fnref:3" class="reversefootnote">↩</a></p>
+    </li>
+    <li id="fn:2">
+      <p>S. Christodoulidis, M. Anthimopoulos, L. Ebner, A. Christe and S. Mougiakakou, “Multisource Transfer Learning With Convolutional Neural Networks for Lung Pattern Analysis”, IEEE Journal of Biomedical and Health Informatics, vol. 21, no. 1, pp. 76-84, 2017. Available: 10.1109/jbhi.2016.2636929. <a href="#fnref:2" class="reversefootnote">↩</a></p>
+    </li>
+    <li id="fn:4">
+      <p>L. Bossard, M. Guillaumin and L. Van Gool, “Food-101 – Mining Discriminative Components with Random Forests”, Vision.ee.ethz.ch, 2019. [Online]. Available: https://www.vision.ee.ethz.ch/datasets_extra/food-101/. [Accessed: 13- Jun- 2019] <a href="#fnref:4" class="reversefootnote">↩</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div><a class="u-url" href="/ml-blog/research/2020/03/20/multi-source-transfer-learning-and-web-scraping.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/ml-blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/ml-blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/ml-blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>I am an undergrad with a passion for machine learning.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" title="fastai"><svg class="svg-icon grey"><use xlink:href="/ml-blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/ml-blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
