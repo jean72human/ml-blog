@@ -3,16 +3,19 @@ toc: true
 layout: post
 description: Employing multi-source transfer learning and web scraping to increase model accuracy when the dataset is limited.
 categories: [research]
-title: Multi-source transfer learning and we scraping
+title: Multi-source transfer learning and web scraping
+image: /images/transferlearningone/diagramone.jpg
 ---
 
-# Multi-source transfer learning and we scraping
+
 
 ## Abstract
 
-*
-Machine learning and, more specifically, deep learning have recently driven many innovations. The availability of massive datasets and computation resources has made it possible to create deeper neural networks that are able to learn more meaningful representations of the data. Those new possibilities are not always accessible to the average African company trying to leverage on deep learning to increase profit. In that case, scarcity of data, especially, could be a limitation since neural networks are known to be data-hungry. When faced with the issue of unavailability of public data, a company can either increase the size of the dataset by collecting data themselves or increase the size and complexity of the model. The option studied here is to use web scraping to manage and clean a bigger dataset. In trying to increase the size and complexity of the model, to avoid overfitting, the transfer learning approach was used. This technique involves the transfer of weights from several datasets using model ensembling. All these methods were tested on a rice meal classification problem. The problem consists of classifying images of four rice-based dishes: jollof rice, fried rice, plain rice, and waakye. The dataset contains 60 train images and 20 test images for each group making up a total of 240 training images and 80 testing images. The baseline of 75% was achieved using a dense net Convolutional Neural Network (CNN). The web scraping method used to increase the dataset size attained an accuracy of 87%. A multi-source transfer learning approach was also used where models were pre-trained on the Food-101 dataset and the Food-256 dataset. The multisource transfer learning method achieved an accuracy of 90%. Using these two methods, we implement two ways to significantly increase the efficiency of a model when the original dataset is small. 
-*
+
+*Machine learning and, more specifically, deep learning have recently driven many innovations. The availability of massive datasets and computation resources has made it possible to create deeper neural networks that are able to learn more meaningful representations of the data. Those new possibilities are not always accessible to the average African company trying to leverage on deep learning to increase profit. In that case, scarcity of data, especially, could be a limitation since neural networks are known to be data-hungry. When faced with the issue of unavailability of public data, a company can either increase the size of the dataset by collecting data themselves or increase the size and complexity of the model. The option studied here is to use web scraping to manage and clean a bigger dataset. In trying to increase the size and complexity of the model, to avoid overfitting, the transfer learning approach was used. This technique involves the transfer of weights from several datasets using model ensembling. All these methods were tested on a rice meal classification problem. The problem consists of classifying images of four rice-based dishes: jollof rice, fried rice, plain rice, and waakye. The dataset contains 60 train images and 20 test images for each group making up a total of 240 training images and 80 testing images. The baseline of 75% was achieved using a dense net Convolutional Neural Network (CNN). The web scraping method used to increase the dataset size attained an accuracy of 87%. A multi-source transfer learning approach was also used where models were pre-trained on the Food-101 dataset and the Food-256 dataset. The multisource transfer learning method achieved an accuracy of 90%. Using these two methods, we implement two ways to significantly increase the efficiency of a model when the original dataset is small.*
+
+
+
 
 ## Introduction
 
