@@ -6,8 +6,8 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 
-title: fastpages
-description: An easy to use blogging platform with support for Jupyter Notebooks.
+title: Gbetondji Dovonon
+description: This is my ML blog. I am an undergrad who is passionate about machine learning, transfer learning, meta-learning and reinforcement learning.
 github_username: jean72human
 # you can comment the below line out if your repo name is not different than your baseurl
 github_repo: "ml-blog"
@@ -34,13 +34,14 @@ url: "https://jean72human.github.io" # the base hostname & protocol for your sit
 #
 # 3. You must replace the parameter `baseurl` in _action_files/settings.ini with the same value as you set here but WITHOUT QUOTES.
 #
-baseurl: "" # the subpath of your site, e.g. "/blog".
+baseurl: "ml-blog" # the subpath of your site, e.g. "/blog".
 
 # Github and twitter are optional:
 minima:
   social_links:
     twitter: jean72human
     github: jean72human
+  skin: fastpages-dracula-higlight
 
 # Set this to true to get LaTeX math equation support
 use_math: 
@@ -91,8 +92,7 @@ plugins:
 paginate: 10
 paginate_path: /page:num/
 
-#remote_theme: jekyll/minima
-remote_theme: saikiransripada/mixyll
+remote_theme: jekyll/minima
 
 titles_from_headings:
   enabled:     true
