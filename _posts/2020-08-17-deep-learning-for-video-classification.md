@@ -13,7 +13,7 @@ In my third year of BSc at Ashesi University ( 2018 spring semester), I took a m
 
 The presentation was recorded and later uploaded to Youtube so here it is:
 
-{% youtube https://www.youtube.com/watch?v=x2RG0lpzo1c&t=213s %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x2RG0lpzo1c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Github
 
