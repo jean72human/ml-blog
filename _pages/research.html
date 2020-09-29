@@ -1,0 +1,26 @@
+---
+layout: categories
+permalink: /research/
+title: Research
+search_exclude: true
+---
+
+<h2>Research projects</h2>
+{% assign category_name = 'research'%}
+
+{%- if page.list_title -%}
+    <h2 class="post-list-heading">{{ page.list_title }}</h2>
+{%- endif -%}
+<ul class="post-list">
+{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+{% for post in site.categories[category_name] %}
+<li>
+    {%- if site.show_image -%}
+        {%- include post_list_image_card.html -%}
+    {% else %}
+        {%- include post_list.html -%}
+    {%- endif -%}
+</li>
+{% endfor %}
+</ul>
+            
