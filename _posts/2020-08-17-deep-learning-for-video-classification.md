@@ -17,6 +17,4 @@ The presentation was recorded and later uploaded to Youtube so here it is:
 
 ## Github
 
-I also uploaded the code on my Github. It was implemented using tensorflow keras. Note that the dataset used here doesn't make any learning possible so do not expect anything when looking at the loss graphs, this code is just to illustrate how a deep learning model for video classification would look like and how it would be trained.
-
-Here is the link: https://github.com/jean72human/deep-learning-for-video-classification
+I also uploaded the code on my Github [here](https://github.com/jean72human/deep-learning-for-video-classification). It was implemented using tensorflow keras. Note that the dataset used here doesn't make any learning possible so do not expect anything when looking at the loss graphs, this code is just to illustrate how a deep learning model for video classification would look like and how it would be trained.
