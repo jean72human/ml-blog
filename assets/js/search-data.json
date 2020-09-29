@@ -28,17 +28,6 @@
 
   
       ,"page1": {
-          "title": "About Me",
-          "content": "This is where you put the contents of your About page. Like all your pages, it’s in Markdown format. . This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
-          "url": "https://jean72human.github.io/ml-blog/about/",
-          "relUrl": "/about/",
-          "date": ""
-      }
-      
-  
-
-  
-      ,"page2": {
           "title": "Blog",
           "content": "Blog . Here are my blog articles that are not related to any research projects in particular. I will post about side projects here, as well as my learning experiences, technologies I fall in love with and data science competitions I enter. . Deep Learning for Video Classification . A presentation made to the AI Ghana community on the use of deep learning for video classification. . Aug 17, 2020 . | .",
           "url": "https://jean72human.github.io/ml-blog/blog/",
@@ -51,7 +40,7 @@
   
 
   
-      ,"page4": {
+      ,"page3": {
           "title": "Research",
           "content": "Research projects . These are my (mini) research projects. Mostly projects that are technical, took time (several months) and effort will be posted here. Some are projects I did in teams, some I did alone. Hopefully, one day I publish them. . Multi-source transfer learning and web scraping . Employing multi-source transfer learning and web scraping to increase model accuracy when the dataset is limited. . Mar 20, 2020 . | .",
           "url": "https://jean72human.github.io/ml-blog/research/",
