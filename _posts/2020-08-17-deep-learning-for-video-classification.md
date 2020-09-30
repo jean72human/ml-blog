@@ -7,7 +7,7 @@ title: Deep Learning for Video Classification
 image: /images/dl-for-vid-cl/dl-for-vid-cl.PNG
 ---
 
-In my third year of BSc at Ashesi University ( 2018 spring semester), I took a machine learning course. That course was one of my first introduction to the mathematics behind machine learning concepts such as naive bayes and deep neural networks. At the end of the semester, in teams of five, we wroked on projects that would require us to push ourselves a bit and implement a model that cannot just be imported fromfall a library. My team decided to work on video classification, more specifically we worked on automatic lip reading using video inputs. Fast forward to a few weeks ago, the AI Ghana community contacted me. I was asked to present on a machine learning topic of my choice and I thought it would be a nice idea to present on video classification using deep learning. 
+In my third year of BSc at Ashesi University ( 2018 spring semester), I took a machine learning course. That course was one of my first introduction to the mathematics behind machine learning concepts such as Naive Bayes and deep neural networks. At the end of the semester, in teams of five, we worked on projects that would require us to push ourselves a bit and implement a model that cannot just be imported from a library. My team decided to work on video classification, more specifically, we worked on automatic lip-reading using video inputs. Fast forward to a few weeks ago, the AI Ghana community contacted me. I was asked to present on a machine learning topic of my choice, and I thought it would be an excellent idea to give a talk on video classification using deep learning. 
 
 ## Video
 
@@ -17,4 +17,4 @@ The presentation was recorded and later uploaded to Youtube so here it is:
 
 ## Github
 
-I also uploaded the code on my Github [here](https://github.com/jean72human/deep-learning-for-video-classification). It was implemented using tensorflow keras. Note that the dataset used here doesn't make any learning possible so do not expect anything when looking at the loss graphs, this code is just to illustrate how a deep learning model for video classification would look like and how it would be trained.
+I also uploaded the code on my Github [here](https://github.com/jean72human/deep-learning-for-video-classification). It implemented it using TensorFlow Keras. Note that the dataset used here doesn't make any learning possible so do not expect anything when looking at the loss graphs. This code is just here to illustrate how a deep learning model for video classification would look like and how to train it.
