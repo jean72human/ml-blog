@@ -11,7 +11,7 @@ In my third year of BSc at Ashesi University ( 2018 spring semester), I took a m
 
 ## Video
 
-The presentation was recorded and later uploaded to Youtube so here it is:
+They recorded the presentation and uploaded it to Youtube so here it is:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/x2RG0lpzo1c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
