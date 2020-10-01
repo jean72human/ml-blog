@@ -24,12 +24,14 @@ layout: default
     {% endif %}
   {% endfor %}
 
+  {% assign posts = posts | slice:0, 3 %}
+
   <!-- Sort posts by rank, then date -->
   {% assign grouped_posts = posts | group_by: "sticky_rank" | sort: "name", "last" %}
   {% assign sticky_posts = ''|split:'' %}
   {% assign non_sticky_posts = '' | split:'' %}
 
- 
+
   {% for gp in grouped_posts %}
     {%- if gp.name == "" -%}
       {% assign non_sticky_posts = gp.items | sort: "date" | reverse %}

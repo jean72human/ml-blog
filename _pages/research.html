@@ -19,11 +19,7 @@ search_exclude: false
 {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
 {% for post in site.categories[category_name] %}
 <li>
-    {%- if site.show_image -%}
-        {%- include post_list_image_card.html -%}
-    {% else %}
-        {%- include post_list.html -%}
-    {%- endif -%}
+    {%- include post_list_image_card.html -%}
 </li>
 {% endfor %}
 </ul>
