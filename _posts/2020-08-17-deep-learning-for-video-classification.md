@@ -7,7 +7,7 @@ title: Deep Learning for Video Classification
 image: /images/dl-for-vid-cl/dl-for-vid-cl.PNG
 ---
 
-In my third year of BSc at Ashesi University ( 2018 spring semester), I took a machine learning course. That course was one of my first introduction to the mathematics behind machine learning concepts such as Naive Bayes and deep neural networks. At the end of the semester, in teams of five, we worked on projects that would require us to push ourselves a bit and implement a model that cannot just be imported from a library. My team decided to work on video classification, more specifically, we worked on automatic lip-reading using video inputs. Fast forward to a few weeks ago, the AI Ghana community contacted me. I was asked to present on a machine learning topic of my choice, and I thought it would be an excellent idea to give a talk on video classification using deep learning. 
+In my third year of BSc at Ashesi University ( 2019 spring semester), I took a machine learning course. That course was one of my first introduction to the mathematics behind machine learning concepts such as Naive Bayes and deep neural networks. At the end of the semester, in teams of five, we worked on projects that would require us to push ourselves a bit and implement a model that cannot just be imported from a library. My team decided to work on video classification, more specifically, we worked on automatic lip-reading using video inputs. Fast forward to a few weeks ago, the AI Ghana community contacted me. I was asked to present on a machine learning topic of my choice, and I thought it would be an excellent idea to give a talk on video classification using deep learning. 
 
 ## Video
 
