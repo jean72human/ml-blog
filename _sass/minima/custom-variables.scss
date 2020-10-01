@@ -7,25 +7,3 @@ $on-palm:          800px;
 $on-laptop:        1000px;
 $on-medium:        1000px;
 $on-large:         1200px;
-
-$brand-color:           #a10000;
-$brand-color-light:     lighten($brand-color, 5%);
-$brand-color-dark:      darken($brand-color, 35%);
-
-$site-title-color:      $brand-color-light;
-
-$text-color:            #222222;
-
-$link-base-color:       #ffba79;
-$link-visited-color:    $link-base-color;
-$link-hover-color:      $text-color;
-
-$border-color-01:       $brand-color-dark;
-$border-color-02:       $brand-color-light;
-$border-color-03:       $brand-color;
-
-$table-text-color:      $text-color;
-$table-zebra-color:     lighten($background-color, 4%);
-$table-header-bg-color: lighten($background-color, 10%);
-$table-header-border:   lighten($background-color, 21%);
-$table-border-color:    $border-color-01;
