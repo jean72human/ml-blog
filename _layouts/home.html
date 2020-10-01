@@ -24,6 +24,8 @@ layout: default
     {% endif %}
   {% endfor %}
 
+  {% assign posts = posts | slice:0, 1 %}
+
 
   {%- if posts.size > 0 -%}
     {%- if page.list_title -%}
