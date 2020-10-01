@@ -24,7 +24,7 @@ layout: default
     {% endif %}
   {% endfor %}
 
-  {% assign posts = posts | slice:0, 1 %}
+  {% assign posts = posts | slice:0, 3 %}
 
 
   {%- if posts.size > 0 -%}
@@ -35,10 +35,7 @@ layout: default
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       {%- for post in posts -%}
       <li>
-        {%- if site.show_image -%}
-            {%- include post_list.html -%}
-        {% else %}
-            {%- include post_list_image_card.html -%}
+          {%- include post_list.html -%}
         {%- endif -%}
       </li>
       {%- endfor -%}
