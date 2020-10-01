@@ -24,7 +24,7 @@ layout: default
     {% endif %}
   {% endfor %}
 
-  {% assign posts = posts | slice:0, 3 %}
+  {% assign posts = posts | slice:0, 2 %}
 
   <!-- Sort posts by rank, then date -->
   {% assign grouped_posts = posts | group_by: "sticky_rank" | sort: "name", "last" %}
