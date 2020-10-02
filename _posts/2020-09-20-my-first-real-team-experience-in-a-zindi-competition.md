@@ -9,7 +9,7 @@ image: /images/zindi-nlpx/nlpx.PNG
 
 I love competitions, especially in data science. After getting started with machine learning, competing on Kaggle and Zindi became one of my favourite hobbies. But between the lack of time, computing resource and experience, I ended my first challenges closer to the bottom of the private leaderboard. Finally, I decided to listen to one excellent advice often given to people starting on Kaggle. I think it was something like this:
 " To win, you need good ensembles; good ensembles are diverse. To get diverse ensembles, you need a good team."
-Based on this advice, I became more open to working in a team.
+Based on this advice, I became more open to working in a team. I did, for a Zindi competition and it worked: me and my friend finished [7th](https://zindi.africa/competitions/basic-needs-basic-rights-kenya-tech4mentalhealth/leaderboard) which is better than I did in any previous competition. No cash (yet) but a lot of learning.
 
 ## The team experience
 
