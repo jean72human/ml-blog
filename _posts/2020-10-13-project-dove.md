@@ -20,9 +20,13 @@ The intended use is mostly information sharing. The motivation for using Twitter
 
 ## How we built it?
 Dove is a web app with three main components: a database, a script for scraping and analyzing text and a frontend.
-* The database is a simple MongoDB database hosted on mlab.com. It stores information about tweets such as the links, location, the time it was scrapped, and the text of the tweet. This information is what the frontend will display to the user. 
-* We built the frontend as a single page app with React, which fetches the tweet data directly from the database. This app will then display the information on a map and a feed for the corresponding locations.
-* Then there is the backend script which scraps Twitter for new tweets using pre-defined keywords and locations. For each tweet, the script will use a logistic regression model to determine how likely it is that the tweet is about a disastrous event. If the probability is higher than a pre-defined threshold, the data is sent to the database.
+### Database
+The database is a simple MongoDB database hosted on mlab.com. It stores information about tweets such as the links, location, the time it was scraped, and the text of the tweet. This information is what the frontend will display to the user. 
+### Frontend
+We built the frontend as a single page app with React, which fetches the tweet data directly from the database. This app will then display the information on a map and a feed for the corresponding locations.
+### Backend script
+Then there is the backend script which scraps Twitter for new tweets using pre-defined keywords and locations. For each tweet, the script will use a logistic regression model to determine how likely it is that the tweet is about a disastrous event. If the probability is higher than a pre-defined threshold, the data is sent to the database.
+
 I think it is interesting to note that by tuning the probability threshold, we can decide how much data we are letting in. The search keywords and locations can also be edited to reflect ongoing events. 
 
 ## What does it look like?
