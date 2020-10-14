@@ -12,6 +12,8 @@ In December 2019, I participated in a hackathon organized in Ashesi: the [HackAP
 ## What is project Dove?
 > "Accordinorganized in Ashesi: the g to the biblical story (Genesis 8:11), a dove was released by Noah after the flood in order to find land". 
 >> https://en.wikipedia.org/wiki/Doves_as_symbols
+
+
 Similarly, the team I worked with for the 2019 HackAPI decided to send doves on twitter to let us know what is going on. To be a bit more explicit about the product we developed, Dove is a platform that scraps Twitter to find tweets relative to disasters in various locations, mainly floods. 
 The intended use it mostly information sharing. The motivation for using Twitter is the speed at which information spreads on this particular social network, often preceding traditional news platforms. Dove filters and organizes information from Twitter and displays it in a more digestible way, using a map.
 
