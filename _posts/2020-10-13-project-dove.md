@@ -10,7 +10,7 @@ image: /images/project-dove/dove-screen.png
 In December 2019, I participated in a hackathon organized in Ashesi: the [HackAPI](https://twitter.com/hack_api). This article will explain the solution my team built.
 
 ## What is project Dove?
-> "Accordinorganized in Ashesi: the g to the biblical story (Genesis 8:11), a dove was released by Noah after the flood in order to find land". 
+> "According to the biblical story (Genesis 8:11), a dove was released by Noah after the flood in order to find land". 
 >> https://en.wikipedia.org/wiki/Doves_as_symbols
 
 
