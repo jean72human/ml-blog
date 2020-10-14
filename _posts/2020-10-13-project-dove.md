@@ -4,7 +4,7 @@ layout: post
 description: Project DOVE was built for the 2020 HackAPI. It's a web app that scraps Twitter for news, filters it and displays it.
 categories: [blog, hackathon]
 title: Project DOVE
-image: /images/project-dove/dove-screen.png
+image: /images/project-dove/dove-screen.PNG
 ---
 
 In December 2019, I participated in a hackathon organized in Ashesi: the [HackAPI](https://twitter.com/hack_api). This article will explain the solution my team built.
