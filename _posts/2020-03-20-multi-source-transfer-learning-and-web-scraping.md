@@ -1,6 +1,7 @@
 ---
 toc: true
 layout: post
+comments: true
 description: Employing multi-source transfer learning and web scraping to increase model accuracy when the dataset is limited.
 categories: [research]
 title: Multi-source transfer learning and web scraping
