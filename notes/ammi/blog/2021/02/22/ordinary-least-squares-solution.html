@@ -199,7 +199,7 @@ $\underset{\theta}{argmin} \|{X \theta - Y}\|_2^2$</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>First let's expand $\|{X \theta - Y}\|_2^2$
 $$
-\begin{split}
+\begin{aligned}
 \\
 \\
 \|{X \theta - Y}\|_2^2 &amp;= (X \theta - Y)^T(X \theta - Y) \\
@@ -212,16 +212,16 @@ $$
 \frac{\partial \|{X \theta - Y}\|_2^2}{\partial \theta} &amp; = 2 X^T X \theta -  2 X^T Y \\
 \\
 \\
-\end{split}
+\end{aligned}
 $$
 By equating the derivative to 0 we get:
 $$
-\begin{split}
+\begin{aligned}
 2 X^T X \theta -  2 X^T Y &amp; = 0 \\
 X^T X \theta -  X^T Y &amp; = 0 \\
 X^T X \theta &amp; =  X^T Y \\
 \theta &amp; = (X^T X)^{-1} X^T Y \\
-\end{split}
+\end{aligned}
 $$</p>
 
 </div>
