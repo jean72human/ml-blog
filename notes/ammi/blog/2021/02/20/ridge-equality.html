@@ -4,20 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>AMMI notes - ridge equality | Gbetondji Dovonon</title>
+<title>AMMI notes - ridge regression | Gbetondji Dovonon</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="AMMI notes - ridge equality" />
+<meta property="og:title" content="AMMI notes - ridge regression" />
 <meta name="author" content="Gbetondji Dovonon" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Solution to the optimization of the squarred error with accompanying code." />
-<meta property="og:description" content="Solution to the optimization of the squarred error with accompanying code." />
+<meta name="description" content="An explanation of a useful equality for the ridge regression" />
+<meta property="og:description" content="An explanation of a useful equality for the ridge regression" />
 <link rel="canonical" href="https://jean72human.github.io/ml-blog/notes/ammi/blog/2021/02/20/ridge-equality.html" />
 <meta property="og:url" content="https://jean72human.github.io/ml-blog/notes/ammi/blog/2021/02/20/ridge-equality.html" />
 <meta property="og:site_name" content="Gbetondji Dovonon" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-02-20T00:00:00-06:00" />
 <script type="application/ld+json">
-{"datePublished":"2021-02-20T00:00:00-06:00","author":{"@type":"Person","name":"Gbetondji Dovonon"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://jean72human.github.io/ml-blog/notes/ammi/blog/2021/02/20/ridge-equality.html"},"description":"Solution to the optimization of the squarred error with accompanying code.","@type":"BlogPosting","url":"https://jean72human.github.io/ml-blog/notes/ammi/blog/2021/02/20/ridge-equality.html","headline":"AMMI notes - ridge equality","dateModified":"2021-02-20T00:00:00-06:00","@context":"https://schema.org"}</script>
+{"datePublished":"2021-02-20T00:00:00-06:00","author":{"@type":"Person","name":"Gbetondji Dovonon"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://jean72human.github.io/ml-blog/notes/ammi/blog/2021/02/20/ridge-equality.html"},"description":"An explanation of a useful equality for the ridge regression","@type":"BlogPosting","url":"https://jean72human.github.io/ml-blog/notes/ammi/blog/2021/02/20/ridge-equality.html","headline":"AMMI notes - ridge regression","dateModified":"2021-02-20T00:00:00-06:00","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://jean72human.github.io/ml-blog/feed.xml" title="Gbetondji Dovonon" /><link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -88,7 +88,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">AMMI notes - ridge equality</h1><p class="page-description">Solution to the optimization of the squarred error with accompanying code.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-02-20T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">AMMI notes - ridge regression</h1><p class="page-description">An explanation of a useful equality for the ridge regression</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-02-20T00:00:00-06:00" itemprop="datePublished">
         Feb 20, 2021
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -96,7 +96,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      3 min read
     
 </span></p>
 
@@ -141,6 +141,9 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Showing-that-$X^TX-+-\lambda-I_d$-is-always-inversible">Showing that $X^TX + \lambda I_d$ is always inversible </a></li>
+<li class="toc-entry toc-h2"><a href="#Showing-that-$(X^TX-+-\lambda-I_d)^{-1}X^TY-=-X^T(XX^T-+-\lambda-I_n)^{-1}Y$">Showing that $(X^TX + \lambda I_d)^{-1}X^TY = X^T(XX^T + \lambda I_n)^{-1}Y$ </a></li>
+<li class="toc-entry toc-h2"><a href="#Code">Code </a></li>
 </ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
@@ -150,6 +153,423 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Typically in linear regression, the parameter $\theta$ is obtained using $$\theta = (X^TX)^{-1}X^TY$$ 
+In the case of ridge regression (L2 regularization) however, the expression for $\theta$ is the following:
+$$\theta = (X^TX + \lambda I_d)^{-1}X^TY$$ where d is the number of features
+ \ 
+Note that with d as the number of features and n the number of examples.
+The dimensions are as follow:</p>
+<ul>
+<li>$\theta$ is (d,1)</li>
+<li>$X$ is (n,d)</li>
+<li>$Y$ is (n,1)</li>
+</ul>
+<p>Prediction is done using:</p>
+<ul>
+<li>$Y = X \theta$</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Ridge regression can be useful for several reasons. It serves as a regularization technique. Moreover, its solution is always defined. The normal equation for the ordinary least sqares requires us to compute the inverse of $X^TX$ which may not exist. The matrix $X^TX + \lambda I_d$ however is always inversible.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Showing-that-$X^TX-+-\lambda-I_d$-is-always-inversible">
+<a class="anchor" href="#Showing-that-%24X%5ETX-+-%5Clambda-I_d%24-is-always-inversible" aria-hidden="true"><span class="octicon octicon-link"></span></a>Showing that $X^TX + \lambda I_d$ is always inversible<a class="anchor-link" href="#Showing-that-%24X%5ETX-+-%5Clambda-I_d%24-is-always-inversible"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are multiple ways of showing that the inverse of $X^TX + \lambda I_d$ always exists and oone of those is to show that its determinant cannot be 0.\</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>One of the properties of determinants, for positive semidefinite matrices at least, is:
+
+$$det(A + B) \geq det(A) + det(B)$$
+
+In our case that means:
+
+$$det(X^T X + \lambda I_d) \geq det(X^T X) + det(\lambda I_d)$$
+</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We need the two matrices to be positive semidefinite for this to work.\
+I will asume $X^T X$ to be positive semidefinite. It's the Hessian of the loss function we optimize so without it being positive semidefinite, the derivative wouldn't be convex which would have prevented us from finding the closed form solution the way we did it. In facr, since $X^T X$ is positive semidefinite we have: $det(X^T X) \geq 0$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$
+\begin{aligned}
+det(\lambda I_d) &amp; = \lambda^d det(I_d) \\
+&amp; = \lambda^d
+\end{aligned}
+$$<p>so for $\lambda &gt; 0$ we have $\lambda^d &gt; 0$ and $\lambda I_d$ is postive semidefinite</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Since we have $det(\lambda I_d) = \lambda^d$ and $det(X^T X) \geq 0$, we can now say:
+
+$$ det(X^T X) + det(\lambda I_d) \geq \lambda^d &gt; 0$$
+
+Therefore
+$$ det(X^T X + \lambda I_d) &gt; 0 $$ 
+and the matrix $X^T X + \lambda I_d$ is always inversible</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Showing-that-$(X^TX-+-\lambda-I_d)^{-1}X^TY-=-X^T(XX^T-+-\lambda-I_n)^{-1}Y$">
+<a class="anchor" href="#Showing-that-%24(X%5ETX-+-%5Clambda-I_d)%5E%7B-1%7DX%5ETY-=-X%5ET(XX%5ET-+-%5Clambda-I_n)%5E%7B-1%7DY%24" aria-hidden="true"><span class="octicon octicon-link"></span></a>Showing that $(X^TX + \lambda I_d)^{-1}X^TY = X^T(XX^T + \lambda I_n)^{-1}Y$<a class="anchor-link" href="#Showing-that-%24(X%5ETX-+-%5Clambda-I_d)%5E%7B-1%7DX%5ETY-=-X%5ET(XX%5ET-+-%5Clambda-I_n)%5E%7B-1%7DY%24"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For this one too there are several solutions. My favorite one is from <a href="https://danieltakeshi.github.io/2016/08/05/a-useful-matrix-inverse-equality-for-ridge-regression/">this blog post</a> by Daniel Seita.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, when do we use them? I believe it is</p>
+<ul>
+<li>$(X^TX + \lambda I_d)^{-1}X^TY$ when $n &gt; d$</li>
+<li>$X^T(XX^T + \lambda I_n)^{-1}Y$ when $d &gt; n$</li>
+</ul>
+<p>The reason being that we want the smallest matrix to inverse, since matrix inversion is an expensive operation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Code">
+<a class="anchor" href="#Code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code<a class="anchor-link" href="#Code"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>wget https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv -P data
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>ls data
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>winequality-red.csv
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">read_data</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s2">";"</span><span class="p">)</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">'fixed acidity'</span><span class="p">,</span> <span class="s1">'volatile acidity'</span><span class="p">,</span> <span class="s1">'citric acid'</span><span class="p">,</span> <span class="s1">'residual sugar'</span><span class="p">,</span>
+       <span class="s1">'chlorides'</span><span class="p">,</span> <span class="s1">'free sulfur dioxide'</span><span class="p">,</span> <span class="s1">'total sulfur dioxide'</span><span class="p">,</span> <span class="s1">'density'</span><span class="p">,</span>
+       <span class="s1">'pH'</span><span class="p">,</span> <span class="s1">'sulphates'</span><span class="p">,</span> <span class="s1">'alcohol'</span><span class="p">]],</span> <span class="n">data</span><span class="p">[[</span><span class="s2">"quality"</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">split_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="n">split</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">0.8</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+    <span class="n">X_train</span><span class="p">,</span><span class="n">Y_train</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:</span><span class="n">split</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">Y</span><span class="p">[:</span><span class="n">split</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">split</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">Y</span><span class="p">[</span><span class="n">split</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">Y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="p">,</span><span class="n">Y</span> <span class="o">=</span> <span class="n">read_data</span><span class="p">(</span><span class="s2">"data/winequality-red.csv"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">Y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span> <span class="o">=</span> <span class="n">split_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">mse</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">Y_hat</span><span class="p">):</span> <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">Y</span><span class="o">-</span><span class="n">Y_hat</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">LSO</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Computes 𝜃 using the normal equation</span>
+<span class="sd">    """</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">X</span><span class="p">)</span> <span class="o">@</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Y</span>
+    <span class="k">return</span> <span class="n">theta</span>
+
+<span class="n">theta1</span> <span class="o">=</span> <span class="n">LSO</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">Y_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"train error : </span><span class="si">{</span><span class="n">mse</span><span class="p">(</span><span class="n">X_train</span> <span class="o">@</span> <span class="n">theta1</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"test error : </span><span class="si">{</span><span class="n">mse</span><span class="p">(</span><span class="n">X_test</span> <span class="o">@</span> <span class="n">theta1</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>train error : 0.41601754667558516
+test error : 0.4315544880376387
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ridge</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Computes 𝜃 using ridge regression with the first expression</span>
+<span class="sd">    """</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">X</span> <span class="o">+</span> <span class="p">(</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="p">)</span> <span class="o">@</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Y</span>
+    <span class="k">return</span> <span class="n">theta</span>
+    
+<span class="n">theta2</span> <span class="o">=</span> <span class="n">ridge</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">Y_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"train error : </span><span class="si">{</span><span class="n">mse</span><span class="p">(</span><span class="n">X_train</span> <span class="o">@</span> <span class="n">theta2</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"test error : </span><span class="si">{</span><span class="n">mse</span><span class="p">(</span><span class="n">X_test</span> <span class="o">@</span> <span class="n">theta2</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>train error : 0.416193401976357
+test error : 0.4321054875487965
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ridge_2</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+    <span class="sd">"""</span>
+<span class="sd">    Computes 𝜃 using ridge regression with the second expression</span>
+<span class="sd">    """</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">X</span> <span class="o">@</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">+</span> <span class="p">(</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="p">)</span> <span class="o">@</span> <span class="n">Y</span>
+    <span class="k">return</span> <span class="n">theta</span>
+    
+<span class="n">theta3</span> <span class="o">=</span> <span class="n">ridge_2</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">Y_train</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"train error : </span><span class="si">{</span><span class="n">mse</span><span class="p">(</span><span class="n">X_train</span> <span class="o">@</span> <span class="n">theta3</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"test error : </span><span class="si">{</span><span class="n">mse</span><span class="p">(</span><span class="n">X_test</span> <span class="o">@</span> <span class="n">theta3</span><span class="p">,</span> <span class="n">Y_test</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>train error : 0.41619340197628557
+test error : 0.432105487324763
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can make two observations:</p>
+<ul>
+<li>the loss values for the normal regression and the ridge regression are not very different. That's probably because we are using linear regression so there is not much overfitting. In that case regularization is not very likely to improve performance</li>
+<li>The loss values for the two ridge functions are about the same </li>
+</ul>
+
+</div>
+</div>
+</div>
 </div>
 
 
