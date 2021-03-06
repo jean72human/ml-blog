@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Polynomial regression and overfitting | Gbetondji Dovonon</title>
+<title>AMMI notes - Polynomial regression and overfitting | Gbetondji Dovonon</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Polynomial regression and overfitting" />
+<meta property="og:title" content="AMMI notes - Polynomial regression and overfitting" />
 <meta name="author" content="Gbetondji Dovonon" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Exploring the limits of linear regression and how polynomial regression gives better results in some cases" />
@@ -17,7 +17,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2021-03-04T00:00:00-06:00" />
 <script type="application/ld+json">
-{"author":{"@type":"Person","name":"Gbetondji Dovonon"},"headline":"Polynomial regression and overfitting","description":"Exploring the limits of linear regression and how polynomial regression gives better results in some cases","datePublished":"2021-03-04T00:00:00-06:00","dateModified":"2021-03-04T00:00:00-06:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jean72human.github.io/ml-blog/notes/ammi/blog/2021/03/04/poynomial-regression-and-overfitting.html"},"url":"https://jean72human.github.io/ml-blog/notes/ammi/blog/2021/03/04/poynomial-regression-and-overfitting.html","@context":"https://schema.org"}</script>
+{"author":{"@type":"Person","name":"Gbetondji Dovonon"},"headline":"AMMI notes - Polynomial regression and overfitting","description":"Exploring the limits of linear regression and how polynomial regression gives better results in some cases","datePublished":"2021-03-04T00:00:00-06:00","dateModified":"2021-03-04T00:00:00-06:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jean72human.github.io/ml-blog/notes/ammi/blog/2021/03/04/poynomial-regression-and-overfitting.html"},"url":"https://jean72human.github.io/ml-blog/notes/ammi/blog/2021/03/04/poynomial-regression-and-overfitting.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://jean72human.github.io/ml-blog/feed.xml" title="Gbetondji Dovonon" /><link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -88,7 +88,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Polynomial regression and overfitting</h1><p class="page-description">Exploring the limits of linear regression and how polynomial regression gives better results in some cases</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-03-04T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">AMMI notes - Polynomial regression and overfitting</h1><p class="page-description">Exploring the limits of linear regression and how polynomial regression gives better results in some cases</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-03-04T00:00:00-06:00" itemprop="datePublished">
         Mar 4, 2021
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -161,8 +161,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We could have $\Phi(\pmb x) = [x_1,x_2,...,x_d,x_1^2,x_2^2,...,x_d^2]$ \
-This would square all the features and allow us to learn non linear relationships between the input features and the target.</p>
+<p>We could have $\Phi(\pmb x) = [x_1,x_2,...,x_d,x_1^2,x_2^2,...,x_d^2]$.</p>
+<p>This would square all the features and allow us to learn non linear relationships between the input features and the target.</p>
 
 </div>
 </div>
