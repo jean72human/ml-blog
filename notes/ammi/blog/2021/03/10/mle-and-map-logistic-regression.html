@@ -250,9 +250,9 @@ P(y|x;\theta) &amp; = \prod_{k=1}^m \frac{\hat{y}_k^{y_k}}{y_k}
 \\
 \log P(y|x;\theta) &amp; = \sum_{k=1}^m \log \frac{\hat{y}_k^{y_k}}{y_k}
 \\
-&amp; = \sum_{k=1}^m \log \hat{y}_k^{y_k} - \sum_{k=1}^m y_k
+&amp; = \sum_{k=1}^m \log \hat{y}_k^{y_k} - \sum_{k=1}^m \log y_k
 \\
-&amp; = \sum_{k=1}^m y_k \log \hat{y}_k - \sum_{k=1}^m y_k
+&amp; = \sum_{k=1}^m y_k \log \hat{y}_k - \sum_{k=1}^m \log y_k
 \\
 &amp; = \sum_{k=1}^m y_k \log \hat{y}_k + c
 \end{aligned}
