@@ -3,7 +3,7 @@ toc: false
 layout: post
 comments: true
 description: Here is a series of notes I'm putting down for the various courses I'm taking at the African Masters in Machine Intelligence 2020/2021 in Mbour, Senegal.
-categories: [research]
+categories: [blog]
 title: Notes from AMMI 2020
 image: /images/ammi/logo.png
 ---
