@@ -153,7 +153,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is a simple implementation of Naive Bayes classifier for review rating. The classifier uses Baye's rule to determine the probability of a text belonging to a certain class, then we find the class with the highest probability.</p>
+<p>This is a simple implementation of Naive Bayes classifier for review rating. The classifier uses Bayes' rule to determine the probability of a text belonging to a certain class, then we find the class with the highest probability.</p>
 
 </div>
 </div>
@@ -161,7 +161,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's not a token belonging to a sentence as $w_i$ where $i$ is its position in the sentence. We can find the probability $P(c | w_1 w_2 ... w_n)$ for a piece of text with $n$ tokens. Using Baye's rule, and assuming independence of the tokens with respect to each other, we have
+<p>Let's not a token belonging to a sentence as $w_i$ where $i$ is its position in the sentence. We can find the probability $P(c | w_1 w_2 ... w_n)$ for a piece of text with $n$ tokens. Using Baye's rule (we can ignore the evidence term since it doesn't change no matter the class), and assuming independence of the tokens with respect to each other, we have
 $$
 \begin{aligned}
 P(c | w_1 w_2 ... w_n) &amp; \propto P(c) P( w_1 w_2 ... w_n | c) \\
@@ -260,7 +260,7 @@ with $count(c)$ the number of examples in that class and $|\mathcal{D}|$ the siz
 <div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">naive_classifier</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">classes</span><span class="p">):</span>
             <span class="sd">"""</span>
-<span class="sd">            Initialization of the </span>
+<span class="sd">            Initialization of the object. We create the dictionaries that will hold the priors and likelihoods.</span>
 <span class="sd">            """</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">trained</span> <span class="o">=</span> <span class="kc">False</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">classes</span> <span class="o">=</span> <span class="n">classes</span>
