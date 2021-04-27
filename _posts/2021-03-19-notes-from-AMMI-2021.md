@@ -17,6 +17,8 @@ In January 2021, I started a masters degree at the African Institute of Mathemat
 - [Maximum likelihood estimation and maximum a posteriori estimation](https://jean72human.github.io/ml-blog/notes/ammi/blog/2021/03/05/mle-and-map.html)
 - [Polynomial regression and overfitting](https://jean72human.github.io/ml-blog/notes/ammi/blog/2021/03/04/poynomial-regression-and-overfitting.html)
 - [MLE and MAP for logistic regression](https://jean72human.github.io/ml-blog/notes/ammi/blog/2021/03/10/mle-and-map-logistic-regression.html)
+## Natural language processing
+- [Naive Bayes classifier for sentiment analysis](https://jean72human.github.io/ml-blog/notes/ammi/blog/2021/04/26/_04_27_naive_bayes_classifier.html)
 
 So that's all for now. I will be updating this article as we progress in the program. Comments are apreciated. 
 
