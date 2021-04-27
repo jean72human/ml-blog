@@ -161,7 +161,7 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's not a token belonging to a sentence as $w_i$ where $i$ is its position in the sentence. We can find the probability $P(c | w_1 w_2 ... w_n)$ for a piece of text with $n$ tokens. Using Baye's rule (we can ignore the evidence term since it doesn't change no matter the class), and assuming independence of the tokens with respect to each other, we have
+<p>Let a token belonging to a sentence be $w_i$ where $i$ is its position in the sentence. We can find the probability $P(c | w_1 w_2 ... w_n)$ for a piece of text with $n$ tokens. Using Baye's rule (we can ignore the evidence term since it doesn't change no matter the class), and assuming independence of the tokens with respect to each other, we have
 $$
 \begin{aligned}
 P(c | w_1 w_2 ... w_n) &amp; \propto P(c) P( w_1 w_2 ... w_n | c) \\
