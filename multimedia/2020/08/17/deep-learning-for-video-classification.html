@@ -4,17 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Search | Gbetondji Dovonon</title>
+<title>Deep Learning for Video Classification | Gbetondji Dovonon</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Search" />
+<meta property="og:title" content="Deep Learning for Video Classification" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Aspiring machine learning researcher" />
-<meta property="og:description" content="Aspiring machine learning researcher" />
-<link rel="canonical" href="https://jean72human.github.io/ml-blog/search/" />
-<meta property="og:url" content="https://jean72human.github.io/ml-blog/search/" />
+<meta name="description" content="A presentation made to the AI Ghana community on the use of deep learning for video classification." />
+<meta property="og:description" content="A presentation made to the AI Ghana community on the use of deep learning for video classification." />
+<link rel="canonical" href="https://jean72human.github.io/ml-blog/multimedia/2020/08/17/deep-learning-for-video-classification.html" />
+<meta property="og:url" content="https://jean72human.github.io/ml-blog/multimedia/2020/08/17/deep-learning-for-video-classification.html" />
 <meta property="og:site_name" content="Gbetondji Dovonon" />
+<meta property="og:image" content="https://jean72human.github.io/ml-blog/images/dl-for-vid-cl/dl-for-vid-cl.PNG" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-08-17T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"Aspiring machine learning researcher","headline":"Search","@type":"WebPage","url":"https://jean72human.github.io/ml-blog/search/","@context":"https://schema.org"}</script>
+{"description":"A presentation made to the AI Ghana community on the use of deep learning for video classification.","headline":"Deep Learning for Video Classification","dateModified":"2020-08-17T00:00:00-05:00","datePublished":"2020-08-17T00:00:00-05:00","@type":"BlogPosting","image":"https://jean72human.github.io/ml-blog/images/dl-for-vid-cl/dl-for-vid-cl.PNG","mainEntityOfPage":{"@type":"WebPage","@id":"https://jean72human.github.io/ml-blog/multimedia/2020/08/17/deep-learning-for-video-classification.html"},"url":"https://jean72human.github.io/ml-blog/multimedia/2020/08/17/deep-learning-for-video-classification.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/ml-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://jean72human.github.io/ml-blog/feed.xml" title="Gbetondji Dovonon" /><link rel="shortcut icon" type="image/x-icon" href="/ml-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -82,18 +85,58 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <!-- adapted from https://github.com/pmarsceill/just-the-docs -->
-<script type="text/javascript" src="/ml-blog/assets/js/search.js"></script>
-<script type="text/javascript" src="/ml-blog/assets/js/vendor/lunr.min.js"></script>
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-<div class="search">
-    <div class="search-input-wrap">
-    <input type="text" class="js-search-input search-input input-block form-control" tabindex="0" placeholder="Search Gbetondji Dovonon" aria-label="Search Gbetondji Dovonon" autocomplete="off">
-    </div>
-    <br>
-    <div class="js-search-results search-results-wrap"></div>
-</div>
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Deep Learning for Video Classification</h1><p class="page-description">A presentation made to the AI Ghana community on the use of deep learning for video classification.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-08-17T00:00:00-05:00" itemprop="datePublished">
+        Aug 17, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
 
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/ml-blog/categories/#multimedia">multimedia</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#video">Video</a></li>
+<li class="toc-entry toc-h2"><a href="#github">Github</a></li>
+</ul><p>In my third year of BSc at Ashesi University ( 2019 spring semester), I took a machine learning course. That course was one of my first introduction to the mathematics behind machine learning concepts such as Naive Bayes and deep neural networks. At the end of the semester, in teams of five, we worked on projects that would require us to push ourselves a bit and implement a model that cannot just be imported from a library. My team decided to work on video classification, more specifically, we worked on automatic lip-reading using video inputs. Fast forward to a few weeks ago, the AI Ghana community contacted me. I was asked to present on a machine learning topic of my choice, and I thought it would be an excellent idea to give a talk on video classification using deep learning.</p>
+
+<h2 id="video">
+<a class="anchor" href="#video" aria-hidden="true"><span class="octicon octicon-link"></span></a>Video</h2>
+
+<p>They recorded the presentation and uploaded it to Youtube so here it is:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x2RG0lpzo1c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h2 id="github">
+<a class="anchor" href="#github" aria-hidden="true"><span class="octicon octicon-link"></span></a>Github</h2>
+
+<p>I also uploaded the code on my Github <a href="https://github.com/jean72human/deep-learning-for-video-classification">here</a>. It implemented it using TensorFlow Keras. Note that the dataset used here doesn’t make any learning possible so do not expect anything when looking at the loss graphs. This code is just here to illustrate how a deep learning model for video classification would look like and how to train it.</p>
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="jean72human/ml-blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/ml-blog/multimedia/2020/08/17/deep-learning-for-video-classification.html" hidden></a>
+</article>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/ml-blog/"></data>
