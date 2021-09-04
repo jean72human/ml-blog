@@ -3,7 +3,7 @@ toc: true
 layout: post
 comments: true
 description: A presentation made to the AI Ghana community on the use of deep learning for video classification.
-categories: [blog]
+categories: [multimedia]
 title: Deep Learning for Video Classification
 image: /images/dl-for-vid-cl/dl-for-vid-cl.PNG
 ---

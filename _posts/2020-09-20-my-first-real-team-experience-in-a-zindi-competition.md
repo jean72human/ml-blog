@@ -3,7 +3,7 @@ toc: true
 layout: post
 comments: true
 description: A description of my first real team experience in a Zindi competition with Ronny, a friend of mine.
-categories: [blog, competitions, zindi]
+categories: [competitions, zindi]
 title: My first real team experience in a Zindi competition
 image: /images/zindi-nlpx/nlpx.PNG
 ---
